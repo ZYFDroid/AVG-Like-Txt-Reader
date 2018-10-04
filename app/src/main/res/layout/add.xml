@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent">
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:orientation="vertical">
+
+		<ListView
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:layout_weight="1.0"
+			android:id="@+id/addListView"/>
+
+		<EditText
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:ems="10"
+			android:inputType="text"
+			android:id="@+id/addEditText"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:text="确认选择"
+			android:onClick="onConfirm"/>
+
+	</LinearLayout>
+
+	<FrameLayout
+		android:layout_height="match_parent"
+		android:layout_width="match_parent"
+		android:id="@+id/loading"
+		android:background="#88000000"
+		android:foregroundGravity="center"
+		android:visibility="gone">
+
+		<Button
+			android:layout_height="match_parent"
+			android:layout_width="match_parent"
+			android:background="@drawable/empty"/>
+
+		<ProgressBar
+			style="?android:attr/progressBarStyleLarge"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:layout_gravity="center"/>
+
+	</FrameLayout>
+
+</FrameLayout>
+

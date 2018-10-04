@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent"
+	android:background="#000000"
+	android:id="@+id/mainBg">
+
+	<LinearLayout
+		android:layout_height="match_parent"
+		android:layout_width="match_parent"
+		android:orientation="horizontal">
+
+		<Button
+			android:layout_height="match_parent"
+			android:layout_width="match_parent"
+			android:background="@drawable/empty"
+			android:onClick="onTap"/>
+
+	</LinearLayout>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:text="TAP SCREEN"
+		android:layout_alignParentBottom="true"
+		android:layout_centerHorizontal="true"
+		android:layout_marginBottom="30dp"
+		android:textColor="#FFFFFF"
+		android:id="@+id/tapScreenText"
+		android:visibility="gone"
+		android:background="@drawable/readfg_2"/>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="200dp"
+		android:orientation="vertical"
+		android:layout_centerInParent="true"
+		android:id="@+id/mainTwoBtn"
+		android:visibility="gone"
+		android:background="@drawable/readfg_2">
+
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:text="开始阅读"
+			android:background="@drawable/readfg_1"
+			android:onClick="onContinueClick"
+			android:textColor="#FFFFFF"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:text="选择章节"
+			android:background="@drawable/readfg_1"
+			android:onClick="onChapterSelectClick"
+			android:textColor="#FFFFFF"/>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_height="match_parent"
+		android:layout_width="match_parent"
+		android:orientation="vertical"
+		android:background="@drawable/readfg_2"
+		android:id="@+id/clistPannel"
+		android:visibility="gone">
+
+		<ImageButton
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:src="@android:drawable/ic_menu_close_clear_cancel"
+			android:background="@drawable/readfg_1"
+			android:onClick="closeChapter"/>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="长按章节开始。选择章节开始将会覆盖原有存档"
+			android:textColor="#FFFF00"/>
+
+		<ListView
+			android:layout_height="match_parent"
+			android:layout_width="match_parent"
+			android:id="@+id/chapterList"/>
+
+	</LinearLayout>
+
+	<Button
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:text="切换图书"
+		android:textColor="#FFFFFF"
+		android:layout_alignParentRight="true"
+		android:background="@drawable/readfg_1"
+		android:onClick="chooseBook"
+		android:visibility="gone"
+		android:id="@+id/swbook"/>
+
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:text="BOOKNAME"
+		android:gravity="center"
+		android:textColor="#FFFFFF"
+		android:id="@+id/titleText"
+		android:visibility="gone"
+		android:background="#000000"/>
+
+</RelativeLayout>
+

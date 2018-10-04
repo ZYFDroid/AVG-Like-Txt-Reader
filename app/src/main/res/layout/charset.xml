@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+	<TextView
+		android:layout_height="100dp"
+		android:layout_width="match_parent"
+		android:text="Text"
+		android:background="@drawable/readfg_4"
+		android:id="@+id/charsetText"
+		android:textColor="#FFFFFF"
+		android:minHeight="100dp"/>
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:text="选择编码格式:  如果文本显示乱码，请点击下面按钮切换到其他格式"/>
+
+	<ScrollView
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content">
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="fill_parent"
+			android:orientation="vertical">
+
+			<View
+				android:layout_height="1dp"
+				android:layout_width="match_parent"/>
+
+			<Button
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:text="UTF-8"
+				android:onClick="crt"/>
+
+			<Button
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:text="GBK"
+				android:onClick="crt"/>
+
+			<Button
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:text="GB2312"
+				android:onClick="crt"/>
+
+			<Button
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:text="Unicode"
+				android:onClick="crt"/>
+
+			<Button
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:text="Big5"
+				android:onClick="crt"/>
+			<Button
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:text="EUC-TW"
+				android:onClick="crt"/>
+		</LinearLayout>
+
+	</ScrollView>
+
+	<Button
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:text="确认选择"
+		android:onClick="conf"/>
+
+</LinearLayout>
+
