@@ -1,0 +1,10 @@
+/app/build/gen
+/app/build/bin/classesdebug
+/app/build/bin/classesrelease
+/app/build/bin/injected
+/app/build/bin/jardex
+/app/build/bin/merged
+/app/build/bin/res
+/app/build/bin/resources.ap_
+/app/build/bin/classes.dex
+*.bak
