@@ -26,6 +26,7 @@ public final class R {
     public static final class id {
         public static final int addEditText=0x7f050001;
         public static final int addListView=0x7f050000;
+        public static final int batteryView=0x7f05001c;
         public static final int chapterList=0x7f050009;
         public static final int charsetText=0x7f050004;
         public static final int clistPannel=0x7f050008;
@@ -42,6 +43,7 @@ public final class R {
         public static final int menupannel=0x7f050017;
         public static final int nextBtn=0x7f050013;
         public static final int nextHint=0x7f050011;
+        public static final int progressView=0x7f05001b;
         public static final int readingBg=0x7f05000c;
         public static final int readingFg=0x7f05000d;
         public static final int readingText=0x7f05000f;

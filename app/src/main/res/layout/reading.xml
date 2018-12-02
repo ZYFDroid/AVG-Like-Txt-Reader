@@ -1,313 +1,357 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_height="match_parent"
+	android:orientation="vertical"
 	android:layout_width="match_parent"
-	android:background="@drawable/read_bg_1"
-	android:id="@+id/readingBg">
+	android:layout_height="match_parent">
 
-	<LinearLayout
+	<RelativeLayout
 		android:layout_height="wrap_content"
 		android:layout_width="match_parent"
-		android:orientation="vertical"
-		android:layout_alignParentBottom="true"
-		android:background="@drawable/readfg_1"
-		android:id="@+id/readingFg"
-		android:layout_marginLeft="64dp"
-		android:layout_marginRight="64dp">
+		android:background="@drawable/read_bg_1"
+		android:id="@+id/readingBg"
+		android:layout_weight="1.0">
 
 		<LinearLayout
-			android:layout_height="81dp"
+			android:layout_height="wrap_content"
 			android:layout_width="match_parent"
 			android:orientation="vertical"
-			android:id="@+id/itn">
+			android:layout_alignParentBottom="true"
+			android:background="@drawable/readfg_1"
+			android:id="@+id/readingFg"
+			android:layout_marginLeft="64dp"
+			android:layout_marginRight="64dp">
 
-			<TextView
+			<LinearLayout
+				android:layout_height="81dp"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:textColor="#FFFFFF"
-				android:gravity="bottom|left"
-				android:id="@+id/readingText"
-				android:shadowColor="#000000"
-				android:textSize="18sp"/>
+				android:orientation="vertical"
+				android:id="@+id/itn">
+
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textColor="#FFFFFF"
+					android:gravity="bottom|left"
+					android:id="@+id/readingText"
+					android:shadowColor="#000000"
+					android:textSize="18sp"/>
+
+			</LinearLayout>
 
 		</LinearLayout>
 
-	</LinearLayout>
-
-	<ImageView
-		android:layout_height="wrap_content"
-		android:layout_width="wrap_content"
-		android:src="@drawable/btn_option"
-		android:id="@+id/menubtn"/>
-
-	<TextView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:textAppearance="?android:attr/textAppearanceMedium"
-		android:text="▼"
-		android:textColor="#FFFFFF"
-		android:layout_margin="5dp"
-		android:id="@+id/nextHint"
-		android:layout_alignBottom="@id/readingFg"
-		android:layout_alignRight="@id/readingFg"/>
-
-	<ImageView
-		android:layout_height="wrap_content"
-		android:layout_width="wrap_content"
-		android:src="@drawable/btn_log"
-		android:layout_alignParentRight="true"
-		android:id="@+id/logbutton"/>
-
-	<LinearLayout
-		android:layout_height="match_parent"
-		android:layout_width="match_parent"
-		android:orientation="vertical"
-		android:layout_below="@id/menubtn">
-
-		<Button
-			android:layout_height="match_parent"
-			android:layout_width="match_parent"
-			android:background="@drawable/empty"
-			android:onClick="onNextClick"
-			android:id="@+id/nextBtn"/>
-
-	</LinearLayout>
-
-	<LinearLayout
-		android:layout_height="match_parent"
-		android:layout_width="match_parent"
-		android:orientation="vertical"
-		android:background="@drawable/readfg_2"
-		android:id="@+id/logpan"
-		android:visibility="gone">
-
-		<TextView
-			android:layout_width="match_parent"
+		<ImageView
 			android:layout_height="wrap_content"
-			android:textAppearance="?android:attr/textAppearanceSmall"
-			android:gravity="bottom|left"
-			android:textColor="#FFFFFF"
-			android:id="@+id/logTextView"/>
-
-	</LinearLayout>
-
-	<TextView
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:textAppearance="?android:attr/textAppearanceLarge"
-		android:text="载入中......"
-		android:gravity="center"
-		android:background="#000000"
-		android:id="@+id/loadingtext"
-		android:textColor="#FFFFFF"
-		android:visibility="gone"/>
-
-	<LinearLayout
-		android:layout_height="wrap_content"
-		android:layout_width="wrap_content"
-		android:orientation="vertical"
-		android:layout_centerInParent="true"
-		android:background="@drawable/readfg_1"
-		android:id="@+id/menupannel"
-		android:visibility="gone"
-		android:layout_margin="36dp">
+			android:layout_width="wrap_content"
+			android:src="@drawable/btn_option"
+			android:id="@+id/menubtn"/>
 
 		<TextView
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:textAppearance="?android:attr/textAppearanceLarge"
-			android:text="选项"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:text="▼"
 			android:textColor="#FFFFFF"
-			android:gravity="center"
-			android:paddingLeft="80dp"
-			android:paddingRight="80dp"
-			android:layout_gravity="center"/>
+			android:layout_margin="5dp"
+			android:id="@+id/nextHint"
+			android:layout_alignBottom="@id/readingFg"
+			android:layout_alignRight="@id/readingFg"/>
 
-		<ScrollView
+		<ImageView
 			android:layout_height="wrap_content"
-			android:layout_width="wrap_content">
+			android:layout_width="wrap_content"
+			android:src="@drawable/btn_log"
+			android:layout_alignParentRight="true"
+			android:id="@+id/logbutton"/>
 
-			<LinearLayout
+		<LinearLayout
+			android:layout_height="match_parent"
+			android:layout_width="match_parent"
+			android:orientation="vertical"
+			android:layout_below="@id/menubtn">
+
+			<Button
+				android:layout_height="match_parent"
+				android:layout_width="match_parent"
+				android:background="@drawable/empty"
+				android:onClick="onNextClick"
+				android:id="@+id/nextBtn"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_height="match_parent"
+			android:layout_width="match_parent"
+			android:orientation="vertical"
+			android:background="@drawable/readfg_2"
+			android:id="@+id/logpan"
+			android:visibility="gone">
+
+			<TextView
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceSmall"
+				android:gravity="bottom|left"
+				android:textColor="#FFFFFF"
+				android:id="@+id/logTextView"/>
+
+		</LinearLayout>
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:text="载入中......"
+			android:gravity="center"
+			android:background="#000000"
+			android:id="@+id/loadingtext"
+			android:textColor="#FFFFFF"
+			android:visibility="gone"/>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:orientation="vertical"
+			android:layout_centerInParent="true"
+			android:background="@drawable/readfg_1"
+			android:id="@+id/menupannel"
+			android:visibility="gone"
+			android:layout_margin="36dp">
+
+			<TextView
 				android:layout_width="wrap_content"
-				android:orientation="vertical">
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:text="选项"
+				android:textColor="#FFFFFF"
+				android:gravity="center"
+				android:paddingLeft="80dp"
+				android:paddingRight="80dp"
+				android:layout_gravity="center"/>
 
-				<TextView
-					android:layout_height="wrap_content"
-					android:layout_width="wrap_content"
-					android:text="存档"
-					android:textColor="#FFFFFF"
-					android:textAppearance="?android:attr/textAppearanceMedium"/>
+			<ScrollView
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content">
 
 				<LinearLayout
 					android:layout_height="wrap_content"
-					android:layout_width="match_parent"
-					android:orientation="horizontal">
+					android:layout_width="wrap_content"
+					android:orientation="vertical">
 
-					<Button
+					<TextView
 						android:layout_height="wrap_content"
 						android:layout_width="wrap_content"
-						android:text="保存并退出"
+						android:text="存档"
 						android:textColor="#FFFFFF"
-						android:onClick="saveandexit"
-						android:background="@drawable/readfg_1"
-						android:layout_weight="1.0"/>
+						android:textAppearance="?android:attr/textAppearanceMedium"/>
 
-					<Button
-						android:layout_height="match_parent"
+					<LinearLayout
+						android:layout_height="wrap_content"
+						android:layout_width="match_parent"
+						android:orientation="horizontal">
+
+						<Button
+							android:layout_height="wrap_content"
+							android:layout_width="wrap_content"
+							android:text="保存并退出"
+							android:textColor="#FFFFFF"
+							android:onClick="saveandexit"
+							android:background="@drawable/readfg_1"
+							android:layout_weight="1.0"/>
+
+						<Button
+							android:layout_height="match_parent"
+							android:layout_width="wrap_content"
+							android:text="保存"
+							android:background="@drawable/readfg_1"
+							android:layout_weight="0.4"
+							android:onClick="svc"
+							android:textColor="#FFFFFF"/>
+
+					</LinearLayout>
+
+					<TextView
+						android:layout_height="wrap_content"
 						android:layout_width="wrap_content"
-						android:text="保存"
-						android:background="@drawable/readfg_1"
-						android:layout_weight="0.4"
-						android:onClick="svc"
+						android:text="外观"
+						android:textColor="#FFFFFF"
+						android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textAppearance="?android:attr/textAppearanceSmall"
+						android:text="变更场景"
 						android:textColor="#FFFFFF"/>
 
-				</LinearLayout>
-
-				<TextView
-					android:layout_height="wrap_content"
-					android:layout_width="wrap_content"
-					android:text="外观"
-					android:textColor="#FFFFFF"
-					android:textAppearance="?android:attr/textAppearanceMedium"/>
-
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textAppearance="?android:attr/textAppearanceSmall"
-					android:text="变更场景"
-					android:textColor="#FFFFFF"/>
-
-				<LinearLayout
-					android:layout_height="wrap_content"
-					android:layout_width="wrap_content"
-					android:orientation="horizontal">
-
-					<Button
+					<LinearLayout
 						android:layout_height="wrap_content"
 						android:layout_width="wrap_content"
-						android:text="场景1"
-						android:textColor="#FFFFFF"
-						android:background="@drawable/readfg_1"
-						android:onClick="sbg1"
-						android:layout_weight="1.0"/>
+						android:orientation="horizontal">
 
-					<Button
-						android:layout_height="wrap_content"
-						android:layout_width="wrap_content"
-						android:text="场景2"
-						android:textColor="#FFFFFF"
-						android:background="@drawable/readfg_1"
-						android:onClick="sbg2"
-						android:layout_weight="1.0"/>
+						<Button
+							android:layout_height="wrap_content"
+							android:layout_width="wrap_content"
+							android:text="场景1"
+							android:textColor="#FFFFFF"
+							android:background="@drawable/readfg_1"
+							android:onClick="sbg1"
+							android:layout_weight="1.0"/>
 
-					<Button
-						android:layout_height="wrap_content"
-						android:layout_width="wrap_content"
-						android:text="场景3"
-						android:textColor="#FFFFFF"
-						android:background="@drawable/readfg_1"
-						android:onClick="sbg3"
-						android:layout_weight="1.0"/>
+						<Button
+							android:layout_height="wrap_content"
+							android:layout_width="wrap_content"
+							android:text="场景2"
+							android:textColor="#FFFFFF"
+							android:background="@drawable/readfg_1"
+							android:onClick="sbg2"
+							android:layout_weight="1.0"/>
 
-					<Button
-						android:layout_height="wrap_content"
+						<Button
+							android:layout_height="wrap_content"
+							android:layout_width="wrap_content"
+							android:text="场景3"
+							android:textColor="#FFFFFF"
+							android:background="@drawable/readfg_1"
+							android:onClick="sbg3"
+							android:layout_weight="1.0"/>
+
+						<Button
+							android:layout_height="wrap_content"
+							android:layout_width="wrap_content"
+							android:text="自定义"
+							android:layout_weight="1.0"
+							android:background="@drawable/readfg_1"
+							android:onClick="gallery"
+							android:textColor="#FFFFFF"/>
+
+					</LinearLayout>
+
+					<TextView
 						android:layout_width="wrap_content"
-						android:text="自定义"
-						android:layout_weight="1.0"
-						android:background="@drawable/readfg_1"
-						android:onClick="gallery"
+						android:layout_height="wrap_content"
+						android:textAppearance="?android:attr/textAppearanceSmall"
+						android:text="变更窗口"
 						android:textColor="#FFFFFF"/>
 
+					<LinearLayout
+						android:layout_height="wrap_content"
+						android:layout_width="match_parent"
+						android:orientation="horizontal">
+
+						<Button
+							android:layout_height="wrap_content"
+							android:layout_width="wrap_content"
+							android:text="样式1"
+							android:textColor="#FFFFFF"
+							android:background="@drawable/readfg_1"
+							android:onClick="sfg1"
+							android:layout_weight="1.0"/>
+
+						<Button
+							android:layout_height="wrap_content"
+							android:layout_width="wrap_content"
+							android:text="样式2"
+							android:textColor="#FFFFFF"
+							android:background="@drawable/readfg_1"
+							android:onClick="sfg2"
+							android:layout_weight="1.0"/>
+
+						<Button
+							android:layout_height="wrap_content"
+							android:layout_width="wrap_content"
+							android:text="样式3"
+							android:textColor="#FFFFFF"
+							android:background="@drawable/readfg_1"
+							android:onClick="sfg3"
+							android:layout_weight="1.0"/>
+
+						<Button
+							android:layout_height="wrap_content"
+							android:layout_width="wrap_content"
+							android:text="样式4"
+							android:textColor="#FFFFFF"
+							android:background="@drawable/readfg_1"
+							android:onClick="sfg4"
+							android:layout_weight="1.0"/>
+
+					</LinearLayout>
+
+					<TextView
+						android:layout_height="wrap_content"
+						android:layout_width="wrap_content"
+						android:text="文本速度"
+						android:textColor="#FFFFFF"/>
+
+					<SeekBar
+						android:layout_height="wrap_content"
+						android:layout_width="match_parent"
+						android:id="@+id/textSpeed"/>
+
+					<TextView
+						android:layout_height="wrap_content"
+						android:layout_width="wrap_content"
+						android:text="字体大小"
+						android:textColor="#FFFFFF"/>
+
+					<SeekBar
+						android:layout_height="wrap_content"
+						android:layout_width="match_parent"
+						android:id="@+id/textSizeBar"/>
+
 				</LinearLayout>
 
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textAppearance="?android:attr/textAppearanceSmall"
-					android:text="变更窗口"
-					android:textColor="#FFFFFF"/>
+			</ScrollView>
 
-				<LinearLayout
-					android:layout_height="wrap_content"
-					android:layout_width="match_parent"
-					android:orientation="horizontal">
+		</LinearLayout>
 
-					<Button
-						android:layout_height="wrap_content"
-						android:layout_width="wrap_content"
-						android:text="样式1"
-						android:textColor="#FFFFFF"
-						android:background="@drawable/readfg_1"
-						android:onClick="sfg1"
-						android:layout_weight="1.0"/>
+		<TextView
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="T\nt\nt"
+			android:textColor="#00000000"
+			android:id="@+id/threeCharHeight"
+			android:textSize="18sp"
+			android:background="#00000000"/>
 
-					<Button
-						android:layout_height="wrap_content"
-						android:layout_width="wrap_content"
-						android:text="样式2"
-						android:textColor="#FFFFFF"
-						android:background="@drawable/readfg_1"
-						android:onClick="sfg2"
-						android:layout_weight="1.0"/>
+	</RelativeLayout>
 
-					<Button
-						android:layout_height="wrap_content"
-						android:layout_width="wrap_content"
-						android:text="样式3"
-						android:textColor="#FFFFFF"
-						android:background="@drawable/readfg_1"
-						android:onClick="sfg3"
-						android:layout_weight="1.0"/>
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="#000000">
 
-					<Button
-						android:layout_height="wrap_content"
-						android:layout_width="wrap_content"
-						android:text="样式4"
-						android:textColor="#FFFFFF"
-						android:background="@drawable/readfg_1"
-						android:onClick="sfg4"
-						android:layout_weight="1.0"/>
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="37.15%"
+			android:textColor="#FFFFFF"
+			android:layout_weight="1.0"
+			android:gravity="left"
+			android:id="@+id/progressView"
+			android:textSize="9sp"/>
 
-				</LinearLayout>
+		<TextClock
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textColor="#FFFFFF"
+			android:layout_weight="1.0"
+			android:gravity="center"
+			android:textSize="9sp"/>
 
-				<TextView
-					android:layout_height="wrap_content"
-					android:layout_width="wrap_content"
-					android:text="文本速度"
-					android:textColor="#FFFFFF"/>
-
-				<SeekBar
-					android:layout_height="wrap_content"
-					android:layout_width="match_parent"
-					android:id="@+id/textSpeed"/>
-
-				<TextView
-					android:layout_height="wrap_content"
-					android:layout_width="wrap_content"
-					android:text="字体大小"
-					android:textColor="#FFFFFF"/>
-
-				<SeekBar
-					android:layout_height="wrap_content"
-					android:layout_width="match_parent"
-					android:id="@+id/textSizeBar"/>
-
-			</LinearLayout>
-
-		</ScrollView>
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="100%"
+			android:textColor="#FFFFFF"
+			android:layout_weight="1.0"
+			android:gravity="right"
+			android:id="@+id/batteryView"
+			android:textSize="9sp"/>
 
 	</LinearLayout>
 
-	<TextView
-		android:layout_height="wrap_content"
-		android:layout_width="wrap_content"
-		android:text="T\nt\nt"
-		android:textColor="#00000000"
-		android:id="@+id/threeCharHeight"
-		android:textSize="18sp"
-		android:background="#00000000"/>
-
-</RelativeLayout>
+</LinearLayout>
 
