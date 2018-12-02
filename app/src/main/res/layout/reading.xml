@@ -300,6 +300,44 @@
 						android:layout_width="match_parent"
 						android:id="@+id/textSizeBar"/>
 
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="底部状态栏"
+						android:textColor="#FFFFFF"/>
+
+					<LinearLayout
+						android:orientation="horizontal"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:gravity="center">
+
+						<CheckBox
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:id="@+id/showProg"
+							android:text="显示阅读进度"
+							android:onClick="onStatusVisibilityChanged"
+							android:textColor="#FFFFFF"/>
+
+						<CheckBox
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:id="@+id/showTime"
+							android:text="显示时间"
+							android:onClick="onStatusVisibilityChanged"
+							android:textColor="#FFFFFF"/>
+
+						<CheckBox
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:id="@+id/showBatt"
+							android:text="显示电量"
+							android:onClick="onStatusVisibilityChanged"
+							android:textColor="#FFFFFF"/>
+
+					</LinearLayout>
+
 				</LinearLayout>
 
 			</ScrollView>
@@ -317,7 +355,7 @@
 
 	</RelativeLayout>
 
-	<LinearLayout
+	<FrameLayout
 		android:orientation="horizontal"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
@@ -328,30 +366,34 @@
 			android:layout_height="wrap_content"
 			android:text="37.15%"
 			android:textColor="#FFFFFF"
-			android:layout_weight="1.0"
 			android:gravity="left"
 			android:id="@+id/progressView"
-			android:textSize="9sp"/>
+			android:textSize="9sp"
+			android:layout_gravity="left"
+			android:visibility="gone"/>
 
 		<TextClock
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:textColor="#FFFFFF"
-			android:layout_weight="1.0"
 			android:gravity="center"
-			android:textSize="9sp"/>
+			android:textSize="9sp"
+			android:layout_gravity="center"
+			android:visibility="gone"
+			android:id="@+id/clockView"/>
 
 		<TextView
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:text="100%"
 			android:textColor="#FFFFFF"
-			android:layout_weight="1.0"
 			android:gravity="right"
 			android:id="@+id/batteryView"
-			android:textSize="9sp"/>
+			android:textSize="9sp"
+			android:layout_gravity="right"
+			android:visibility="gone"/>
 
-	</LinearLayout>
+	</FrameLayout>
 
 </LinearLayout>
 

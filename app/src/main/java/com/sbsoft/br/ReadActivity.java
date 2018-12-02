@@ -189,7 +189,7 @@ public class ReadActivity extends Activity
 		receiver = new BatteryReceiver((TextView)findViewById(R.id.batteryView));
 		registerReceiver(receiver, filter);
 		
-		
+		readStatusSetting();
 		
 	}
 
@@ -611,6 +611,38 @@ public class ReadActivity extends Activity
 		current=current/100f;
 		((TextView)findViewById(R.id.progressView)).setText(current+"%");
 	}
+	
+	public void onStatusVisibilityChanged(View p1){
+		if(p1.getId()==R.id.showProg){
+			((View)findViewById(R.id.progressView)).setVisibility(((CheckBox)p1).isChecked()?View.VISIBLE:View.GONE);
+			saveint("show_prog",((CheckBox)p1).isChecked() ? 0 : 1);
+		}
+		if(p1.getId()==R.id.showTime){
+			((View)findViewById(R.id.clockView)).setVisibility(((CheckBox)p1).isChecked()?View.VISIBLE:View.GONE);
+			saveint("show_clock",((CheckBox)p1).isChecked() ? 0 : 1);
+		}
+		if(p1.getId()==R.id.showBatt){
+			((View)findViewById(R.id.batteryView)).setVisibility(((CheckBox)p1).isChecked()?View.VISIBLE:View.GONE);
+			saveint("show_battery",((CheckBox)p1).isChecked() ? 0 : 1);
+		}
+	}
+	
+	public void readStatusSetting(){
+		CheckBox chk;
+		chk=(CheckBox)findViewById(R.id.showBatt);
+		chk.setChecked(loadInt("show_battery",1)==0);
+		onStatusVisibilityChanged(chk);
+		
+		chk=(CheckBox)findViewById(R.id.showTime);
+		chk.setChecked(loadInt("show_clock",0)==0);
+		onStatusVisibilityChanged(chk);
+		
+		chk=(CheckBox)findViewById(R.id.showProg);
+		chk.setChecked(loadInt("show_prog",1)==0);
+		onStatusVisibilityChanged(chk);
+		
+	}
+	
 }
 
 
