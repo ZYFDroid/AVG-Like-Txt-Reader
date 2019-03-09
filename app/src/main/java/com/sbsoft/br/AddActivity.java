@@ -24,7 +24,7 @@ ArrayList<String> bookPath;
 		if(new File(addEditText.getText().toString()).exists()){
 		//TODO:Implements this method.
 		AlertDialog.Builder adb=new AlertDialog.Builder(this);
-		adb.setTitle("请输入图书实际标题");
+		adb.setTitle("请输入电子书实际标题");
 	    edt=new EditText(this);
 		edt.setText(new File(addEditText.getText().toString()).getName().replace(".txt","").replace(".TXT",""));
 		adb.setView(edt);
@@ -45,7 +45,7 @@ ArrayList<String> bookPath;
 				});
 				adb.create().show();
 		}else{
-			Ut.tw(this,"图书路径无效");
+			Ut.tw(this,"电子书路径无效");
 		}
 	}
 	public static int readslot=0;
@@ -70,7 +70,7 @@ Thread t;
 		setContentView(R.layout.add);
 		initUi();
 		loading.setVisibility(View.VISIBLE);
-		setTitle("选择图书");
+		setTitle("选择TXT");
 		(t = new Thread(new Runnable(){
 
 				@Override

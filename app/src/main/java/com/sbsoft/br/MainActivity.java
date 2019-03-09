@@ -14,7 +14,8 @@ import java.util.*;
 //import info.monitorenter.cpdetector.io.*;
 public class MainActivity extends Activity
 {
-	public static final String chapterMatchRegExp=".*((第(\\s|一|二|三|四|五|六|七|八|九|十|百|千|万|1|2|3|4|5|6|7|8|9|0)*(章|节|集|季|回|话))|(正文)|(后话)|(后记)|(尾声)|(前言)|(大结局)).*";
+	//public static final String chapterMatchRegExp=".*((第(\\s|一|二|三|四|五|六|七|八|九|十|百|千|万|1|2|3|4|5|6|7|8|9|0)*(章|节|集|季|回|话))|(正文)|(后话)|(后记)|(尾声)|(前言)|(大结局)).*";
+	public static final String chapterMatchRegExp="^(((第|卷){0,}[零〇一二三四五六七八九十白千万亿0-9]{0,}(章|节|集|季|回|话){0,})|[(正文)(后话)(后记)(尾声)(前言)(大结局)])((?![(。)(，”)(？”)(！”)(—”)]).){0,20}((?![。;\\.，\\,\\\"\\!\\?？！…～、—\\:：“”;；\\)\\>〉]).){1,1}$";//"^(((第){0,}[零〇一二三四五六七八九十白千万亿0-9]{1,}(章|节|集|季|回|话){0,})|[(正文)(后话)(后记)(尾声)(前言)(大结局)])((?![(。)(，”)(？”)(！”)(—”)]).){0,20}$";
 	public ArrayList<ChapterInfo> chapters;
 	TextView titleText;
 	TextView tapScreenText;
@@ -177,7 +178,7 @@ public void onUiPrepared(){
 				chapters.add(new ChapterInfo(0,"重新开始"));
 							for(int i=0;i<ReadActivity.dataArr.size();i++){
 								if(ReadActivity.dataArr.get(i).length()<50){
-									String s1=ReadActivity.dataArr.get(i);
+									String s1=ReadActivity.dataArr.get(i).replace("　","  ").trim();
 									if(s1.matches(chapterMatchRegExp)){
 										ChapterInfo CPI=(new ChapterInfo(i,s1));
 											chapters.add(CPI);
