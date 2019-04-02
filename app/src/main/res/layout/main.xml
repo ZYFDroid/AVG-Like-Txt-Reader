@@ -67,18 +67,30 @@
 		android:id="@+id/clistPannel"
 		android:visibility="gone">
 
-		<ImageButton
-			android:layout_height="wrap_content"
-			android:layout_width="wrap_content"
-			android:src="@android:drawable/ic_menu_close_clear_cancel"
-			android:background="@drawable/readfg_1"
-			android:onClick="closeChapter"/>
+		<FrameLayout
+			android:orientation="horizontal"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
 
-		<TextView
-			android:layout_height="wrap_content"
-			android:layout_width="wrap_content"
-			android:text="长按章节开始。选择章节开始将会覆盖原有存档"
-			android:textColor="#FFFF00"/>
+			<ImageButton
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:src="@android:drawable/ic_menu_close_clear_cancel"
+				android:background="@drawable/readfg_1"
+				android:onClick="closeChapter"
+				android:layout_gravity="left|center_vertical"/>
+
+			<Button
+				android:layout_width="wrap_content"
+				style="?android:attr/buttonStyleSmall"
+				android:layout_height="wrap_content"
+				android:text="重新扫描章节"
+				android:layout_gravity="right|center_vertical"
+				android:background="@drawable/readfg_1"
+				android:onClick="rescanChapter"
+				android:textColor="#FFFFFF"/>
+
+		</FrameLayout>
 
 		<ListView
 			android:layout_height="match_parent"

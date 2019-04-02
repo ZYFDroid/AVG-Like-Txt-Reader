@@ -1,10 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView
+<FrameLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_height="wrap_content"
 	android:layout_width="match_parent"
-	android:padding="15dp"
-	android:textAppearance="?android:attr/textAppearanceMedium"
-	android:textColor="#FFFFFF"
-	android:id="@+id/emmm"/>
+	android:layout_height="wrap_content">
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:padding="15dp"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:textColor="#FFFFFF"
+		android:id="@+id/emmm"/>
+
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="right|center_vertical"
+		android:gravity="center"
+		android:id="@+id/pannelChapterOption">
+
+		<ImageButton
+			android:layout_width="wrap_content"
+			style="?android:attr/buttonBarButtonStyle"
+			android:layout_height="wrap_content"
+			android:src="@android:drawable/ic_menu_close_clear_cancel"
+			android:id="@+id/btnRemoveChapter"/>
+
+		<ImageButton
+			android:layout_width="wrap_content"
+			style="?android:attr/buttonBarButtonStyle"
+			android:layout_height="wrap_content"
+			android:src="@android:drawable/ic_media_play"
+			android:id="@+id/btnStartHere"/>
+
+	</LinearLayout>
+
+</FrameLayout>
 

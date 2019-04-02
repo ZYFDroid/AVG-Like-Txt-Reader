@@ -34,11 +34,21 @@ ArrayList<String> bookPath;
 					@Override
 					public void onClick(DialogInterface p1, int p2)
 					{
-						// TODO: Implement this method
-						Ut.savestate(AddActivity.this,"book",addEditText.getText().toString());
+						String internalFileName=getFilesDir().getPath()+"/book.txt";
+						
+						try
+						{
+							Ut.copyFileUsingFileStreams(new File(addEditText.getText().toString()), new File(internalFileName));
+						}
+						catch (IOException e)
+						{
+							Ut.tw(AddActivity. this,"无法读取电子书:"+e.getMessage());
+						}
+
+						Ut.savestate(AddActivity.this,"book",internalFileName);
 						Ut.savestate(AddActivity.this,"bookname",edt.getText().toString());
 						cleansave();
-						ReadActivity.readPath=addEditText.getText().toString();
+						ReadActivity.readPath=internalFileName;
 						startActivity(new Intent(AddActivity.this,CharsetSelectActivity.class));
 						finish();
 					}
@@ -50,10 +60,10 @@ ArrayList<String> bookPath;
 	}
 	public static int readslot=0;
 	public void cleansave(){
-
 		saveint("readPos" +readslot,0);
 		Ut.savestate(this,"readedText"+readslot,"");
 		Ut.savestate(this,"remainText"+readslot,"");
+		Ut.savestate(this,"chapters","");
 	}
 	
 
@@ -110,7 +120,7 @@ Thread t;
 
 									//System.out.println(f.getAbsolutePath());
 									//System.out.println(f.getAbsolutePath()+f.separator+(f.list())[i]);
-									if(l[i].toUpperCase().contentEquals("ANDROID")){continue;}
+									if(l[i].toUpperCase().contentEquals("ANDROID/DATA")){continue;}
 									if(l[i].toUpperCase().contentEquals("XASH")){continue;}
 									if(l[i].toUpperCase().contentEquals("MOBILEQQ")){continue;}
 									if(l[i].toUpperCase().contentEquals("MICROMSG")){continue;}

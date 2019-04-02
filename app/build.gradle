@@ -8,8 +8,8 @@ android {
         applicationId "com.sbsoft.br"
         minSdkVersion 8
         targetSdkVersion 25
-        versionCode 5
-        versionName "1.0.0.5"
+        versionCode 6
+        versionName "1.0.0.6"
     }
     buildTypes {
         release {

@@ -356,7 +356,7 @@ public class ReadActivity extends Activity
 				}
 			catch (IndexOutOfBoundsException e)
 			{
-				loadingtext.setText("完结");
+				loadingtext.setText("全文 完");
 				loadingtext.setVisibility(View.VISIBLE);
 				new Thread(new Runnable(){
 
