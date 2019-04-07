@@ -120,7 +120,7 @@ Thread t;
 
 									//System.out.println(f.getAbsolutePath());
 									//System.out.println(f.getAbsolutePath()+f.separator+(f.list())[i]);
-									if(l[i].toUpperCase().contentEquals("ANDROID/DATA")){continue;}
+									if(l[i].toUpperCase().contains("ANDROID/DATA")){continue;}
 									if(l[i].toUpperCase().contentEquals("XASH")){continue;}
 									if(l[i].toUpperCase().contentEquals("MOBILEQQ")){continue;}
 									if(l[i].toUpperCase().contentEquals("MICROMSG")){continue;}

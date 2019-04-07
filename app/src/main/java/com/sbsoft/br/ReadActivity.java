@@ -1,5 +1,5 @@
 package com.sbsoft.br;
-//我，不写注释
+
 import android.app.*;
 import android.content.*;
 import android.os.*;
@@ -322,9 +322,62 @@ public class ReadActivity extends Activity
 			lock = true;
 
 		}
-
-
 	}
+
+	public static ArrayList<Integer> nextKeycode=new ArrayList<>();
+	public static ArrayList<Integer> leftKeycode=new ArrayList<>();
+	static{
+		nextKeycode.add(KeyEvent.KEYCODE_ENTER);
+		nextKeycode.add(KeyEvent.KEYCODE_SPACE);
+		nextKeycode.add(KeyEvent.KEYCODE_BUTTON_A);
+		nextKeycode.add(KeyEvent.KEYCODE_BUTTON_R1);
+		nextKeycode.add(KeyEvent.KEYCODE_BUTTON_R2);
+		nextKeycode.add(KeyEvent.KEYCODE_DPAD_RIGHT);
+		nextKeycode.add(KeyEvent.KEYCODE_DPAD_DOWN);
+		nextKeycode.add(KeyEvent.KEYCODE_DPAD_CENTER);
+		nextKeycode.add(KeyEvent.KEYCODE_PAGE_DOWN);
+		
+		leftKeycode.add(KeyEvent.KEYCODE_DEL);
+		leftKeycode.add(KeyEvent.KEYCODE_FORWARD_DEL);
+		leftKeycode.add(KeyEvent.KEYCODE_PAGE_UP);
+		leftKeycode.add(KeyEvent.KEYCODE_SHIFT_RIGHT);
+		leftKeycode.add(KeyEvent.KEYCODE_SHIFT_LEFT);
+		leftKeycode.add(KeyEvent.KEYCODE_BUTTON_X);
+		leftKeycode.add(KeyEvent.KEYCODE_BUTTON_L1);
+		leftKeycode.add(KeyEvent.KEYCODE_BUTTON_L2);
+		leftKeycode.add(KeyEvent.KEYCODE_DPAD_LEFT);
+		leftKeycode.add(KeyEvent.KEYCODE_DPAD_UP);
+		
+		
+	}
+	
+
+	@Override
+	public boolean dispatchKeyEvent(KeyEvent event)
+	{
+		int keyCode=event.getKeyCode();
+		if(event.getAction()==KeyEvent.ACTION_DOWN||event.getAction()==KeyEvent.ACTION_MULTIPLE){
+			if(nextKeycode.contains(keyCode)){onNextClick(null);return true;}
+
+			if(leftKeycode.contains(keyCode)){
+				logpan.setVisibility(View.VISIBLE);
+				lock = true;
+				return true;
+			}
+		}
+		if(event.getAction()==KeyEvent.ACTION_UP){
+			if(leftKeycode.contains(keyCode)){
+				logpan.setVisibility(View.GONE);
+				lock = false;
+				return true;
+			}
+		}
+		return super.dispatchKeyEvent(event);
+	}
+	
+	
+	
+	
 
 	public void matchHeight()
 	{
@@ -334,8 +387,9 @@ public class ReadActivity extends Activity
 	}
 
 
+	
 
-	public void onNextClick(View p1)
+	public void onNextClick(View p)
 	{
 		//TODO: Implements this method
 
