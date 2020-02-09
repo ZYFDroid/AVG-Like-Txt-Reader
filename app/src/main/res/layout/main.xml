@@ -7,9 +7,37 @@
 	android:id="@+id/mainBg">
 
 	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:gravity="center_horizontal">
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="Large Text"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:textColor="#FFFFFFFF"
+			android:layout_weight="0.8"
+			android:id="@+id/txtBookName"
+			android:gravity="center"
+			android:textSize="36sp"
+			android:textStyle="bold"
+			android:shadowColor="#FF000000"
+			android:shadowRadius="3"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1.0"/>
+
+	</LinearLayout>
+
+	<LinearLayout
 		android:layout_height="match_parent"
 		android:layout_width="match_parent"
-		android:orientation="horizontal">
+		android:orientation="horizontal"
+		android:id="@+id/mainLinearLayout1">
 
 		<Button
 			android:layout_height="match_parent"
@@ -18,7 +46,19 @@
 			android:onClick="onTap"/>
 
 	</LinearLayout>
-
+    
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="切换图书"
+        android:textColor="#FFFFFF"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/readfg_1"
+        android:onClick="chooseBook"
+        android:visibility="gone"
+        android:id="@+id/swbook"
+        android:padding="4dp"/>
+    
 	<TextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
@@ -33,13 +73,17 @@
 		android:background="@drawable/readfg_2"/>
 
 	<LinearLayout
-		android:layout_height="wrap_content"
+		android:layout_height="match_parent"
 		android:layout_width="200dp"
 		android:orientation="vertical"
 		android:layout_centerInParent="true"
 		android:id="@+id/mainTwoBtn"
-		android:visibility="gone"
-		android:background="@drawable/readfg_2">
+		android:visibility="gone">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="2.0"/>
 
 		<Button
 			android:layout_height="wrap_content"
@@ -57,8 +101,15 @@
 			android:onClick="onChapterSelectClick"
 			android:textColor="#FFFFFF"/>
 
-	</LinearLayout>
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="0.8"/>
 
+	</LinearLayout>
+    
+  
+    
 	<LinearLayout
 		android:layout_height="match_parent"
 		android:layout_width="match_parent"
@@ -99,17 +150,7 @@
 
 	</LinearLayout>
 
-	<Button
-		android:layout_height="wrap_content"
-		android:layout_width="wrap_content"
-		android:text="切换图书"
-		android:textColor="#FFFFFF"
-		android:layout_alignParentRight="true"
-		android:background="@drawable/readfg_1"
-		android:onClick="chooseBook"
-		android:visibility="gone"
-		android:id="@+id/swbook"/>
-
+	
 	<TextView
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"

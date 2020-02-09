@@ -23,7 +23,7 @@ public class MainActivity extends Activity
 	TextView tapScreenText;
 	LinearLayout mainTwoBtn;
 	LinearLayout clistPannel;
-	ChpAdapter mChapterAdapter;
+	ChapterAdapter mChapterAdapter;
 	ListView chapterList;
 	Button selBook;
 	public void initUi()
@@ -66,8 +66,8 @@ public class MainActivity extends Activity
 		if (tapScreenText.getVisibility() == View.VISIBLE)
 		{
 			tapScreenText.setVisibility(View.GONE);
-			selBook.setVisibility(View.GONE);
 			mainTwoBtn.setVisibility(View.VISIBLE);
+            selBook.setVisibility(View.GONE);
 		}
 	}
 
@@ -76,7 +76,7 @@ public class MainActivity extends Activity
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
-		atyStarted = false;
+		alreadyStarted = false;
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);		
@@ -159,6 +159,7 @@ public class MainActivity extends Activity
 
 
 		titleText.setText(Ut.loadstate(this, "bookname", "Undefinded"));
+        ((TextView)findViewById(R.id.txtBookName)).setText(Ut.loadstate(this, "bookname", "Undefinded"));
 		titleText.setVisibility(View.VISIBLE);
 	}
 	public void onUiPrepared()
@@ -199,16 +200,16 @@ public class MainActivity extends Activity
 						scanChapter(ReadActivity.dataArr);
 						chapterData=Ut.loadstate(MainActivity.this,"chapters","");
 						if(chapterData.isEmpty()){
-							mChapterAdapter=new ChpAdapter(MainActivity.this,new String[0]);
+							mChapterAdapter=new ChapterAdapter(MainActivity.this,new String[0]);
 						}
 						else
 						{
-							mChapterAdapter=new ChpAdapter(MainActivity.this,chapterData.split("\\|"));
+							mChapterAdapter=new ChapterAdapter(MainActivity.this,chapterData.split("\\|"));
 						}
 					}
 					else
 					{
-						mChapterAdapter=new ChpAdapter(MainActivity.this,chapterData.split("\\|"));
+						mChapterAdapter=new ChapterAdapter(MainActivity.this,chapterData.split("\\|"));
 					}
 					//
 
@@ -328,14 +329,14 @@ public class MainActivity extends Activity
 	
 
 
-	boolean atyStarted=false;
+	boolean alreadyStarted=false;
 	@Override
 	public void onWindowFocusChanged(boolean hasFocus)
 	{
 		// TODO: Implement this method
 		super.onWindowFocusChanged(hasFocus);
-		if (!atyStarted)
-		{atyStarted = true;onUiPrepared();}
+		if (!alreadyStarted)
+		{alreadyStarted = true;onUiPrepared();}
 		if (hasFocus)
 		{
 			onHide();
@@ -419,11 +420,11 @@ public class MainActivity extends Activity
 				scanChapter(ReadActivity.dataArr);
 				chapterData=Ut.loadstate(MainActivity.this,"chapters","");
 				if(chapterData.isEmpty()){
-					mChapterAdapter=new ChpAdapter(MainActivity.this,new String[0]);
+					mChapterAdapter=new ChapterAdapter(MainActivity.this,new String[0]);
 				}
 				else
 				{
-					mChapterAdapter=new ChpAdapter(MainActivity.this,chapterData.split("\\|"));
+					mChapterAdapter=new ChapterAdapter(MainActivity.this,chapterData.split("\\|"));
 				}
 				chapterList.setAdapter(mChapterAdapter);
 				Ut.tw(MainActivity.this,"扫描完成");
@@ -432,7 +433,7 @@ public class MainActivity extends Activity
 	}
 
 
-	class ChpAdapter extends BaseAdapter
+	class ChapterAdapter extends BaseAdapter
 	{
 		ChapterInfo head=new ChapterInfo(0,"从头开始");
 		ArrayList<ChapterInfo> chapters=new ArrayList<>();
@@ -476,7 +477,7 @@ public class MainActivity extends Activity
 			return v;
 		}
 
-		public ChpAdapter(Context ctx, String[] datas)
+		public ChapterAdapter(Context ctx, String[] datas)
 		{
 			this.ctx = ctx;
 			for (int i=0;i < datas.length;i++)
